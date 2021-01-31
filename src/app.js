@@ -10,7 +10,7 @@ const jwt = require('jsonwebtoken');
 require('./db/conn');
 const auth = require('./middleware/auth');
 const Register = require('./models/registers');
-const port = process.env.port || 8000;
+const port = process.env.PORT || 8000;
 
 const static_path = path.join(__dirname, "../public");
 const template_path = path.join(__dirname, "../templates/views");
