@@ -6,6 +6,7 @@ const path = require('path');
 const bcrypt = require('bcryptjs');
 const cookieParser = require('cookie-parser');
 const jwt = require('jsonwebtoken');
+const bodyParser = require('body-parser');
 
 require('./db/conn');
 const auth = require('./middleware/auth');
@@ -23,7 +24,8 @@ hbs.registerPartials(partials_path);
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.get('/index', (req, res) => {
     res.render('index');
