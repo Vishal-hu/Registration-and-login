@@ -26,7 +26,7 @@ app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/index', (req, res) => {
-    res.render('register');
+    res.render('index');
 });
 
 app.get('/secret', auth, (req, res) => {
